@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tugas 3 HTML</title>
+</head>
+<!-- Baris: Header (120px), Menu Navigasi (60px), Konten Utama (*), Footer (60px) -->
+<frameset rows="120,60,*,60" border="2" frameborder="1">
+  <!-- Header -->
+  <frame src="header.html" name="header" scrolling="no" noresize>
+
+  <!-- Menu navigasi (langsung di bawah header) -->
+  <frame src="menu.html" name="menu" scrolling="no" noresize>
+
+  <!-- Area utama: kiri, konten, kanan -->
+  <frameset cols="200,*,200" border="2" frameborder="1">
+    <!-- Konten kiri -->
+    <frame src="left.html" name="left" scrolling="auto">
+
+    <!-- Main content -->
+    <frame src="home.html" name="maincontent" scrolling="auto">
+
+    <!-- Konten kanan -->
+    <frame src="right.html" name="right" scrolling="auto">
+  </frameset>
+
+  <!-- Footer -->
+  <frame src="footer.html" name="footer" scrolling="no" noresize>
+</frameset>
+</html>
