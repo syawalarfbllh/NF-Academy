@@ -1,0 +1,98 @@
+/* Global style */
+body {
+  margin: 0;
+  background: #0d0d0d;
+  color: #00ffcc;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 14px;
+}
+
+/* Heading style */
+h1, h2, h3, h4, h5, h6 {
+  text-shadow: 0 0 8px #00ffcc;
+  color: #00ffcc;
+}
+
+/* Navigation Bar */
+nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+  background: linear-gradient(90deg, #0d0d0d, #1a0033, #001a33);
+  box-shadow: 0 0 12px #00ffcc;
+}
+
+nav a {
+  color: #00ffcc;
+  text-decoration: none;
+  padding: 8px 16px;
+  border: 1px solid #00ffcc;
+  border-radius: 6px;
+  transition: 0.3s;
+  font-size: 14px;
+  box-shadow: 0 0 6px #00ffcc;
+}
+
+nav a:hover {
+  background: #00ffcc;
+  color: #0d0d0d;
+  box-shadow: 0 0 15px #00ffcc;
+}
+
+/* Table style */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  box-shadow: 0 0 8px #00ffcc;
+}
+
+table th, table td {
+  border: 1px solid #00ffcc;
+  padding: 8px;
+  text-align: center;
+}
+
+table th {
+  background: #1a1a1a;
+  color: #00ffcc;
+}
+
+/* Fieldset style */
+fieldset {
+  border: 1px solid #00ffcc;
+  border-radius: 8px;
+  box-shadow: 0 0 6px #00ffcc;
+  padding: 10px;
+}
+
+legend {
+  padding: 4px 8px;
+  background: #00ffcc;
+  color: #0d0d0d;
+  border-radius: 4px;
+}
+
+/* Links */
+a {
+  color: #00ffcc;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+a:hover {
+  color: #ff00ff;
+  text-shadow: 0 0 6px #ff00ff;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 8px;
+  background: #0d0d0d;
+  color: #00ffcc;
+  text-shadow: 0 0 6px #00ffcc;
+  font-size: 12px;
+}
