@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home - NF Academy</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+    }
+    main .card {
+      min-height: 300px;
+    }
+    aside ul li a {
+      text-decoration: none;
+      color: #0d6efd;
+    }
+    aside ul li a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <div data-include="layout/header.html"></div>
+
+  <!-- Navbar -->
+  <div data-include="layout/navbar.html"></div>
+
+  <!-- Layout -->
+  <div class="container my-4">
+    <div class="row g-4">
+      
+      <!-- Sidebar -->
+      <aside class="col-md-3">
+        <div class="card shadow-sm h-100">
+          <div class="card-header bg-primary text-white">
+            <h5 class="mb-0">Links</h5>
+          </div>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item"><a href="https://nfacademy.id" target="_blank">NF Academy</a></li>
+            <li class="list-group-item"><a href="https://www.nurulfikri.ac.id" target="_blank">Nurul Fikri</a></li>
+            <li class="list-group-item"><a href="https://www.education.com" target="_blank">Education</a></li>
+            <li class="list-group-item"><a href="https://www.freecodecamp.org" target="_blank">FreeCodeCamp</a></li>
+            <li class="list-group-item"><a href="https://www.w3schools.com" target="_blank">W3Schools</a></li>
+          </ul>
+        </div>
+      </aside>
+
+      <!-- Main Content -->
+      <main class="col-md-9">
+        <div class="card shadow-sm p-4 h-100">
+          <h2 class="mb-4">Personal Profile</h2>
+          <p><b>Nama:</b> Muhammad Syawal Arif Billah</p>
+          <p><b>Jurusan:</b> Teknik Informatika</p>
+          <p><b>Email:</b> syawal@example.com</p>
+          <p>
+            Saya mahasiswa yang tertarik dengan pengembangan web modern, khususnya RWD menggunakan Bootstrap.
+          </p>
+        </div>
+      </main>
+
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <div data-include="layout/footer.html"></div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      $('[data-include]').each(function () {
+        $(this).load($(this).data("include"));
+      });
+    });
+  </script>
+</body>
+</html>
