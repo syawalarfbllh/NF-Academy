@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toko Online</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Belajar Membuat Toko Online</h1>
+
+    <!-- Form Tambah Produk -->
+    <div class="form-input">
+      <input type="text" id="nama" placeholder="Nama Produk">
+      <input type="number" id="harga" placeholder="Harga">
+      <input type="number" id="stok" placeholder="Stok">
+      <input type="text" id="gambar" placeholder="URL Gambar Produk">
+      <button class="btn btn-tambah" onclick="tambahProduk()">Tambah Produk</button>
+    </div>
+
+    <!-- Search & Sort -->
+    <div class="search-sort">
+      <input type="text" id="search" placeholder="Cari produk..." onkeyup="tampilkanProduk()">
+      <select id="sort" onchange="tampilkanProduk()">
+        <option value="">Urutkan</option>
+        <option value="murah">Harga: Murah → Mahal</option>
+        <option value="mahal">Harga: Mahal → Murah</option>
+      </select>
+    </div>
+
+    <!-- Daftar Produk -->
+    <div class="produk-list" id="daftar-produk"></div>
+
+    <!-- Keranjang Belanja -->
+    <div class="keranjang">
+      <h2>Keranjang Belanja</h2>
+      <ul id="daftar-keranjang"></ul>
+      <p class="total">Total: <span id="total-harga">Rp 0</span></p>
+      <button class="btn btn-checkout" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+
+  <h4>Copyright by Muhammad Syawal Arif Billah</h4>
+
+  <script src="script.js"></script>
+</body>
+</html>
