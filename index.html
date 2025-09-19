@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Tugas 2 - Data Pegawai</title>
+  <style>
+    body {
+      background-color: #0d1117;
+      color: #e6edf3;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      min-height: 100vh;
+      padding: 30px;
+    }
+
+    h2 {
+      color: #58a6ff;
+      text-shadow: 0 0 8px #58a6ff, 0 0 15px #1f6feb;
+      margin-bottom: 20px;
+    }
+
+    table {
+      border-collapse: collapse;
+      width: 80%;
+      max-width: 900px;
+      background-color: #161b22;
+      box-shadow: 0 0 20px rgba(88,166,255,0.5);
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    thead {
+      background-color: #21262d;
+    }
+
+    thead th {
+      padding: 12px;
+      font-size: 16px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: #58a6ff;
+      text-shadow: 0 0 6px #58a6ff;
+    }
+
+    tbody td, tfoot td {
+      padding: 12px;
+      text-align: center;
+      border-bottom: 1px solid #30363d;
+    }
+
+    tbody tr:hover {
+      background-color: #1f2937;
+      box-shadow: inset 0 0 10px rgba(88,166,255,0.4);
+    }
+
+    tfoot td {
+      background-color: #21262d;
+      font-weight: bold;
+      font-size: 18px;
+      color: #ffd700;
+      text-shadow: 0 0 6px #ffd700, 0 0 12px #ffae00;
+    }
+  </style>
+</head>
+<body>
+  <h2>Data Pegawai</h2>
+  <table>
+    <thead>
+      <tr>
+        <th>Nama Pegawai</th>
+        <th>Umur</th>
+        <th>Jabatan</th>
+        <th>Status</th>
+        <th>Gaji Pokok</th>
+        <th>Tunjangan Jabatan</th>
+        <th>BPJS</th>
+        <th>Tunjangan Keluarga</th>
+      </tr>
+    </thead>
+    <tbody id="dataPegawai">
+    </tbody>
+    <tfoot id="totalGaji">
+    </tfoot>
+  </table>
+
+  <script>
+    // Data pegawai
+    let nama = "dodi prayodi";
+    let umur = 25;
+    let jabatan = "manajer";
+    let status = "menikah";
+
+    // Tentukan gaji pokok berdasarkan jabatan
+    let gapok;
+    if (jabatan.toLowerCase() === "manajer") {
+      gapok = 15000000;
+    } else if (jabatan.toLowerCase() === "asisten manajer") {
+      gapok = 10000000;
+    } else if (jabatan.toLowerCase() === "staff") {
+      gapok = 5000000;
+    } else {
+      gapok = 0;
+    }
+
+    // Hitung tunjangan jabatan, BPJS, tunjangan keluarga
+    let tunjanganJabatan = 0.15 * gapok;
+    let bpjs = 0.10 * gapok;
+    let tunjanganKeluarga = (status.toLowerCase() === "menikah") ? 0.20 * gapok : 0;
+
+    // Hitung total gaji
+    let totalGaji = gapok + tunjanganJabatan + bpjs + tunjanganKeluarga;
+
+    // Cetak isi tabel (tbody)
+    document.getElementById("dataPegawai").innerHTML = `
+      <tr>
+        <td>${nama}</td>
+        <td>${umur} tahun</td>
+        <td>${jabatan}</td>
+        <td>${status}</td>
+        <td>Rp ${gapok.toLocaleString("id-ID")}</td>
+        <td>Rp ${tunjanganJabatan.toLocaleString("id-ID")}</td>
+        <td>Rp ${bpjs.toLocaleString("id-ID")}</td>
+        <td>Rp ${tunjanganKeluarga.toLocaleString("id-ID")}</td>
+      </tr>
+    `;
+
+    // Cetak total gaji (tfoot)
+    document.getElementById("totalGaji").innerHTML = `
+      <tr>
+        <td colspan="8">Total Gaji: Rp ${totalGaji.toLocaleString("id-ID")}</td>
+      </tr>
+    `;
+  </script>
+</body>
+</html>
